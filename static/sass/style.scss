@@ -1,0 +1,556 @@
+/*
+Theme Name: Subway Clone Theme
+Theme URI: http://foo.com
+Author: Foo
+Author URI: http://wordpress.org/
+Description: The 2015 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
+Version: 1.0
+License: MIT License
+Tags: Green.
+Text Domain: Foo
+*/
+
+
+@import url('https://necolas.github.io/normalize.css/3.0.2/normalize.css');
+
+/************************************
+				Overall, Reset Style
+************************************/
+
+/************************************
+	Main Color Scheme & Import Setup
+************************************/
+$dark_green: #1a4d38;
+$med_green: #00543D;
+$light_green: #8FC150;
+$yellow: #FCEF39;
+
+//CSS3 Prefix
+@mixin display-flex(){
+	display:flex;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+}
+@mixin flex-wrap($type) {
+	-webkit-flex-wrap:$type;
+	    -ms-flex-wrap:$type;
+		    flex-wrap:$type;
+}
+@mixin align-items($type){
+		-webkit-box-align: $type;
+	-webkit-align-items: $type;
+	    -ms-flex-align: $type;
+	        align-items: $type;
+}
+
+@mixin justify-content($type){
+	    	-webkit-box-pack: $type;
+ -webkit-justify-content: $type;
+           -ms-flex-pack: $type;
+         justify-content: $type;	
+}
+@mixin flex-direction ($type){
+	 -webkit-flex-direction: $type;
+       -ms-flex-direction: $type;
+	         flex-direction: $type;	
+}
+@mixin transform ($type) {
+			  -webkit-transform: $type;
+			      -ms-transform: $type;
+			          transform: $type;
+}
+@mixin transition ($type) {
+	-webkit-transition: $type;
+					transition: $type;
+}
+
+
+body {
+	background: #fff;
+	line-height: 1.42857;
+}
+*, *::before, *::after, {
+	box-sizing:border-box;
+}
+input {
+  background: #F3F3F3;
+  border-radius: 2px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.12) inset;
+  padding: 4px 4px 4px 10px;
+  margin-top: 5px;
+  border: 1px solid #d6d3ce;
+  height: 25px;
+}
+button {
+  border-radius: 5px;
+  background: $med_green;
+  border: 0;
+  color: white;
+  height: 25px;
+}
+a {
+	text-decoration:none;
+	color:#000;
+	&:hover {
+		color:$med_green;
+	}
+}
+.pointer {
+	cursor:pointer;
+}
+.cevc { //Child Elements Vertically Centered
+	@include display-flex();
+	@include align-items(center);
+}
+
+/************************************
+				Header Style
+************************************/
+
+/* ====================
+ Mobile Header Style
+ =====================*/
+.head_container_mobile {
+	z-index:100;
+	position:fixed;
+	width:100%;
+	min-width:320px;
+	height:46px;
+	@include justify-content(space-between);
+	background:#fff;
+	border-bottom: 2px solid #c9c9c9;
+	margin: 0;
+	padding:0;
+	.fa-navicon, .fa-user {
+		font-size: 1.5em;
+		font-weight: 600;
+		color:#6e6d6b;
+		width:45px;
+		height:45px;
+		padding:10px;
+		&:hover {
+			color:#fff;
+			background:$dark_green;
+		}
+	}
+}
+
+
+// LEFT Menu Pop
+.menu_left_container_mobile {
+	display:none;
+	position: absolute;
+	top:44px;
+	left:0;
+	background:#fff;
+	border-top: 2px solid $dark_green;
+	width:85%;
+	height:450px;
+	form input {
+		width:90%;
+		padding-left:25px;
+		margin: 10px auto;
+	  padding-left: 35px;
+	}
+	form i{
+		position:relative;
+		left:25px;
+	}
+	ul{
+		list-style: none;
+		white-space: nowrap;
+		display:block;
+		font-size: 1em;
+		margin:0;
+		padding:0;
+		li {
+			height: 40px;
+			padding: 10px 0 10px 25px;
+			border-top: 1px solid #c9c9c9;
+			&:first-child {
+				border: none;
+			}
+		}
+	}
+}
+
+.logo_mobile {
+	@include justify-content(center);
+	img { width: 75%; }
+}
+
+// RIGHT Menu Pop
+.menu_right_pop {
+	display:none;
+	position: absolute;
+	top:44px;
+	right:0;
+	background:#fff;
+	border-top: 2px solid $dark_green;
+	width:85%;
+	height:125px;
+	padding:10px;
+	.log_on_input {
+		display:block;
+		white-space:nowrap;
+		& label, & input {
+			margin: 10px 0;
+		}
+		input { width: 100%; }
+		i {
+			color:#000;	
+			font-size:1em;
+			position:relative;
+			right:30px;
+		}
+	}
+	.log_on_password {
+		white-space:nowrap;
+		input {
+			width:70%;
+		}
+		button {
+			width:25%;
+		}
+		i {
+			color:#000;
+			font-size:1em;
+			position:relative;
+			right:25px;
+		}
+	}
+	.log_on_text {
+		@include justify-content(space-around);
+		span {
+			margin: 10px auto;
+			font-weight: 600;		
+		}
+	}
+}
+
+
+//Overlay, Clear_fix
+.overlay {
+	display:none;
+	z-index:80;
+	position:fixed;
+	background:#5c5c5c;
+	opacity:.80;
+	width:100%;
+	height:100%;
+}
+.clear_fix {
+	content:"";
+	display:block;
+	clear:both;
+	visibility:hidden;
+}
+.clear_fix_nav, .clear_fix_nav_mobile {
+	width:100%;
+	display:block;
+	clear:both;
+	height:45px;
+	visibility:hidden;
+}
+
+
+/* ====================
+ Desktop ToolBar Style
+ =====================*/
+//Left Corner
+.headerToolbar {
+	position:fixed;
+	z-index:100;
+	background: $dark_green;
+	width:100%;
+	height:45px;
+	padding:5px;
+	.fa-home:hover { color: $light_green; }
+	i {
+		color:#fff;
+		font-size:1.15em;
+		margin:5px 5px 0px 15px;
+		padding-top:5px;
+	}
+	.toolbar_home {
+		padding-bottom:10px;
+		 	margin: 0 0 0 auto;
+		input { margin-left:15px; width:65%; }
+	}
+}
+// Log in section
+.toolbar_login{
+	padding-bottom:10px;
+	margin: 0 auto  0 0 ;
+	form {
+		white-space:nowrap;
+		margin:0;
+		input:first-child { margin:0; width:30%; }
+		input { width:25%;}
+		span{ 
+			display:flex;
+			@include justify-content(center);
+			font-size:0.75em;
+			a {
+			color: #fff;
+			&:hover { text-decoration:underline; color:$light_green; }
+			}
+		}
+		button:hover { background:$light_green;	}
+	}
+}
+
+/* ====================
+ Desktop Nav Style
+ =====================*/
+nav {
+	width: 100%;
+	height:100px;
+	background:#fff;
+	padding:25px 0;
+	display:flex;
+	@include justify-content(center);
+	border-bottom: 2px solid #c9c9c9;
+}
+.nav_shrink {	height:50px; }
+.nav_ul ul {
+	list-style:none;
+	display:inline-block;
+	white-space:nowrap;
+	padding-left:0;
+	margin-top:10px;
+	li {
+		float:left;
+		font-size:0.85em;
+		padding:0 8px;
+		border-left: 1px solid #ccc;
+		&:first-child { border:none; }
+		a:hover { color: $light_green; }
+	}
+}
+.header_social_icon {
+	z-index:120;
+	position:absolute;
+	top:110px;
+	right:10%;
+	display:flex;
+}
+
+/************************************
+				Footer Style
+************************************/
+.footer_container {
+	display:flex;
+	@include flex-direction(column);
+	min-width:320px;
+	border-top: 1px solid #E4E4E4;
+	& div { text-align: center; }
+	p { font-size: 0.75em;}
+	& div img { margin:15px 0;}
+}
+.social_icon i {
+  border-radius: 50%;
+  background-color: $med_green;
+  border: 2px solid #fff;
+  width: 45px;
+  height: 45px;
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.5);
+  color:#fff;
+	font-size:1.65em;
+	text-align:center;
+	padding:7px 0;
+	margin: 10px;
+} 
+.secondary_menu ul {
+	list-style:none;
+	text-align:center;
+	li {
+		position:relative;
+		display:inline-block;
+		text-align:center;
+		font-size:0.75em;
+		padding:0 8px;
+		border-left: 1px solid #ccc;
+		&:first-child { border:none; }
+		a { font-weight: 600; color:$med_green; }
+		a:hover { color: $light_green; }
+	}
+}
+
+
+/*===================================================
+		HOME PAGE STYLE
+===================================================*/
+/************************************
+				Slider Carousel Style
+************************************/
+.carousel_home {
+	display:block;
+	width:100%;
+	background:#fff;
+	min-width:320px; 
+}
+
+.carousel-indicators { bottom:-10px;}
+
+/************************************
+			Featured Image Post Style
+************************************/
+.container_feature_post {
+	@include display-flex();
+	@include justify-content(center);
+	min-width:1000px;
+}
+
+.post_item {
+	@include display-flex();
+	@include flex-direction(column);
+	margin: 60px 18px 60px 0;
+	width:230px;
+	background:#fff;
+	img { max-width: 100%; }
+	p { font-size: 0.75em; }
+	.more_button, span { font-size: 0.90em; color:$light_green; font-weight:600; }
+}
+
+/*===================================================
+		MENU STYLE
+===================================================*/
+
+/************************************
+			Menu Home Style
+************************************/
+.menu_session {
+	width:980px;
+	margin:auto;
+	.side_bar_menu {
+		float:left;
+		width:20%;
+		padding-top:60px;
+		& > ul { padding-left:0; }
+		ul {
+			list-style: none;
+			margin-right:15px;
+			& > li { padding:15px 0; }
+		 }
+		& > ul > li {
+			padding-left:14px;
+			border-bottom: 1px solid #c5c5c5;
+			&:first-child { border-top: 1px solid #c5c5c5; }
+			}
+		& > ul > li:hover {
+			border-left: 4px solid $med_green;
+			padding-left:10px;
+			}
+		a {
+			font-size:1.15em;
+			color:$med_green;
+			font-weight:400;
+			&:hover {
+			}
+		}
+  }
+	.menu_content_container {
+		float:left;
+		width:60%;
+		padding: 50px 30px;
+		border-left:1px solid #E9E9E9;
+		border-right:1px solid #E9E9E9;
+		h4 { margin-bottom: 20px;}
+		p { font-family:Verdana; font-size: 0.6875em; line-height: 20px; }
+		.menu_items {
+			margin-top:20px;
+			ul {
+				list-style:none;
+				margin:0;
+				padding:0;
+				li {
+					width: 160px;
+					height:110px;
+					float:left;
+					border: 1px solid #c5c5c5;
+					border-radius: 5px;
+					margin:5px;
+					img {
+						max-height:90px; 
+						margin-left:15px;
+						@include transition(transform .2s ease-in-out);
+						&:hover {
+							@include transform(scale(1.2));
+						}
+					}
+					p { 
+						text-align:center; 
+						height:20px; 
+						border-top: 1px solid #c5c5c5;
+						margin:0;
+					}
+				}
+			}
+		}
+	}
+	.menu_information {
+		float:left;
+		width:20%;
+		margin-top:40px;
+		text-align:center;
+		@include display-flex();
+		@include justify-content(center);
+		@include flex-direction(column);
+		padding:0 10px;
+		h3,p { margin: 0; }
+		img { max-width:100%; margin-bottom:15px;}
+		.download_niu_items {
+			border-top: 1px solid #000;
+			border-bottom: 1px solid #000;
+			padding: 15px 0;
+			margin-bottom: 10px;
+			margin-top: 10px;
+		}
+		.adobe_reader {
+		text-align:left;
+		font-size:0.5625em;
+		padding:10px;
+		img { margin-bottom: 15px; }
+		}
+	}
+}
+
+/************************************
+				Media Queries Style
+************************************/
+@media screen and (max-width: 700px) {
+	.head_mobile { display:block; }
+	.social_icon { display:block; }
+	
+	//TO HIDE
+	.head_desktop, .h4_desktop, .more_button { display: none; }
+	//Feature post section becomes vertical.
+	.h4_mobile { display: block; margin:5px 0; font-size:0.85em; }
+	.container_feature_post { @include flex-direction(column); min-width:320px; padding: 10px; }
+	.post_item {
+		width:100%;
+		margin: 5px 0;
+		border-top: 1px solid #ccc;
+		&:first-child { border:0; }
+		.text_img {
+			display:flex;
+			vertical-align: top;
+			img { flex-grow: 3; }
+			p { flex-grow:7; margin:0; padding-left:10px; }
+		}
+	}
+}
+
+
+@media screen and (min-width: 700px) {
+	//Mobile Header Hide
+	.head_mobile, .clear_fix_nav_mobile, .social_icon_mobile { display:none; }
+
+	//Desktop To Show
+	.head_desktop { display:block; }
+	//Prevent Nav li wrap up
+	nav { min-width:800px; }
+}
+

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu</title>
+  <meta name="description" content="" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Font-awesome CDN -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <script src="js/jquery-sub.js"></script>
+  <!-- CSS with Compass normalised -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!--[if lt IE 8]>
+  <![endif]-->
+</head>
+<body>
+<header>
+<!--
+////////////////////////////////
+	Header Section
+////////////////////////////////
+-->
+<!-- Mobile Screen Header Max-width 699px -->
+<section class="head_mobile" id="headerMobile">
+<div class="cevc head_container_mobile">
+	
+<!-- LEFT side pop up menu -->
+	<div class="menu_left_mobile">
+		<i class="fa fa-navicon pointer"></i>
+
+		<div class="menu_left_container_mobile" id="menuMobileLeft">
+			<div class="search_mobile">
+				<form>
+					<i class="fa fa-search"></i>
+					<input type="text" id="FindStore" placeholder="Search Store">
+				</form>
+			</div>
+
+			<div class="menu_left_pop">
+				<ul>
+					<li><a href="#">CURRENT OFFER</a></li>
+					<li><a href="#">OUR MENU</a></li>
+					<li><a href="#">STORE LOCATION</a></li>
+					<li><a href="#">CATERING</a></li>
+					<li><a href="#">ABOUT US</a></li>
+					<li><a href="#">CAREER</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- MIDDLE logo -->
+	<div class="cevc logo_mobile">
+		<img src="images/logo.gif" alt="logo" />
+	</div>
+<!-- RIGHT side pop up menu -->
+	<div class="menu_right_mobile">
+		<i class="fa fa-user pointer"></i>
+			<div class="menu_right_pop" id="menuMobileRight">
+				<form>
+					<div class="log_on_input">
+					<label for="user_log"></label><input type="text" id="user_log" placeholder="User Email" /><i class="fa fa-user"></i>
+					</div>
+					<div class="log_on_password">
+						<label for="user_password"></label><input type="password" id="user_password" placeholder="Password" /><i class="fa fa-lock"></i>
+						<button>Login</button>
+					</div>
+					<div class="cevc log_on_text">
+						<span><a href="#">Forget Password?</a></span>
+						<span><a href="#">Sign Up Now!</a></span>
+					</div>
+				</form>
+			</div>
+	</div>
+</div>
+</section>
+
+
+<div class="overlay" id="pnl_MobileMenuOverlay_Click"></div>
+<div class="clear_fix_nav_mobile"></div>
+<!-- / Mobile Screen Header Max-width 699px / -->
+
+<!-- Desktop Screen Header Min-width 700px -->
+<section class="head_desktop">
+	<div class="cevc headerToolbar">
+		<div class="cevc toolbar_home">
+			<span><a href="#"><i class="fa fa-home"></i></a></span>
+			<form>
+				<input type="text" id="FindStore" placeholder="Search Store"><i class="fa fa-search"></i>
+			</form>
+		</div>
+		<div class="toolbar_login">
+			<form class="cevc">
+					<div>
+					<label for="user_log"><i class="fa fa-user"></i></label><input type="text" id="user_log" placeholder="User Email" />
+					<label for="user_password"><i class="fa fa-lock"></i></label><input type="password" id="user_password" placeholder="Password" />
+					<button>Login</button>
+					</div>
+					<div>
+						<span><a href="#">Forget Password?</a></span>
+						<span><a href="#">Sign Up Now!</a></span>
+					</div>	
+			</form>
+		</div>
+	</div>
+	<div class="clear_fix_nav"></div>
+<!-- Navigation -->
+	<nav>
+		<div class="cevc nav_ul">
+			<img src="images/logo.gif" alt="logo" />
+			<ul>
+				<li><a href="#">CURRENT OFFER</a></li>
+				<li><a href="#">OUR MENU</a></li>
+				<li><a href="#">STORE LOCATION</a></li>
+				<li><a href="#">CATERING</a></li>
+				<li><a href="#">ABOUT US</a></li>
+				<li><a href="#">CAREER</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="social_conatiner">
+		  <div class="header_social_icon social_icon">
+				<a href="#"><i class="fa fa-facebook social_icon_style"></i></a>
+				<a href="#"><i class="fa fa-youtube-play social_icon_style"></i></a>
+				<a href="#"><i class="fa fa-twitter social_icon_style"></i></a>
+			</div>
+	</div>
+</section>
+<!-- / Desktop Screen Header Min-width 700px / -->
+<div class="clear_fix"></div>
+</header>
+
+<!--
+////////////////////////////////
+	Main Menu Section
+////////////////////////////////
+-->
+
+<section class="menu_session">
+	<div class="side_bar_menu">
+		<ul>
+			<li class="cevc pointer"><a href="#">Chef's Suggestion</a></li>
+			<li class="cevc pointer" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapse_breads" href="#collapse_breads"><a href="#">Breads</a>
+			</li>				
+				<ul class="menu_breads collapse" id="collapse_breads">
+					<li class="cevc pointer"><a href="#">Honey Oat</a></li>
+					<li class="cevc pointer"><a href="#">Wheat</a></li>
+					<li class="cevc pointer"><a href="#">White</a></li>
+					<li class="cevc pointer"><a href="#">Flatbread</a></li>
+				</ul>
+			<li class="cevc pointer"  role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseSalad" href="#collapseSalad"><a href="#">Salad</a>
+			</li>
+				<ul class="menu_salad collapse" id="collapseSalad">
+					<li class="cevc pointer"><a href="#">Spinach</a></li>
+					<li class="cevc pointer"><a href="#">Carrot</a></li>
+					<li class="cevc pointer"><a href="#">Onion</a></li>
+				</ul>
+			<li class="cevc pointer"><a href="#">Drinks</a></li>
+		</ul>
+	</div>
+
+	<!--
+////////////////////////////////
+	Menu Content
+////////////////////////////////
+-->
+	<div class="menu_content_container">
+		<div>	
+			<h4>Our Menu</h4>
+			<p>So you know exactly what you are eating at Subway® Restaurants and to help you make a healthier choice, we've created this interactive menu for you. Simply select your favourite Sub, Side or individual ingredient and view its nutritional breakdown. You can customise your selected sub with your choice of bread, sauces and salads and the nutritional data will be automatically updated!</p>
+		</div>
+
+		<!-- Chef's Suggestion -->
+		<div class="chef_suggestion">
+			<h4>6 Grams of Fat or Less Subs</h4>
+			<div class="menu_items">
+				<ul>
+					<li><a href="#"><img src="images/SubHam.png" alt="SubHam" /></a><p>Ham</p></li>
+					<li><a href="#"><img src="images/SubChickenTeriyaki.png" alt="SubChickenTeriyaki" /></a><p>Veggie Delite</p></li>
+					<li><a href="#"><img src="images/SubTurkey.png" alt="SubTurkey" /></a><p>Turkey</p></li>
+					<li><a href="#"><img src="images/SubRoastBeef.png" alt="SubRoastBeef" /></a><p>Roast Beef</p></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clear_fix"></div>
+		<!-- Bread Types -->
+			<h4>Breads</h4>
+			<div class="menu_items">
+				<ul>
+					<li><a href="#"><img src="images/Bread_HoneyOat.jpg" alt="SubHam" /></a><p>Honey Oat</p></li>
+					<li><a href="#"><img src="images/Bread_wheat.jpg" alt="SubChickenTeriyaki" /></a><p>Wheat</p></li>
+					<li><a href="#"><img src="images/Bread_White.jpg" alt="SubTurkey" /></a><p>White</p></li>
+					<li><a href="#"><img src="images/Bread_Flatbread.jpg" alt="SubRoastBeef" /></a><p>Flatbread</p></li>
+				</ul>
+			</div>
+
+	</div>
+
+
+		<!--
+////////////////////////////////
+	3rd Column Section
+////////////////////////////////
+-->
+	<div class="menu_information">
+		<img src="images/imgNuritional.gif" alt="nutritional info" />
+		<p>Download our</p>
+		<h3>Nutritional</h3>
+		<h3>Guide</h3>
+		<div class="download_niu_items">
+			<p><a href="#">Download Nutritional Guide per 100g</a></p>
+			<p><a href="#">Download Allergen Guide</a></p>
+			<p><a href="#">Download Ingredient Guide</a></p>
+		</div>
+		<div class="adobe_reader">
+			<a href="#"><img src="images/adobe.png" alt="adobe" /></a>
+			<p>Nutritional values are based on average figures and standard product formulation. Actual serving size and nutrient values may vary including due to special customer requests. This interactive calculator determines values dynamically using scripts that are run within the web browser. As such, calculations may be influenced by browser incompatibility from time to time. If you believe any results from the use of the calculator to be inaccurate, please do contact us so that we may address any concerns. A downloadable Nutritional Information Brochure is also available on the right hand side of this web page for your convenience.</p>
+		</div>
+	</div>
+
+</section>
+
+<footer>
+<!--
+////////////////////////////////
+	Footer Section
+////////////////////////////////
+-->
+<div class="clear_fix"></div>
+<div class="footer_container">
+	<div class="social_icon social_icon_mobile">
+		<a href="#"><i class="fa fa-facebook social_icon_style"></i></a>
+		<a href="#"><i class="fa fa-youtube-play social_icon_style"></i></a>
+		<a href="#"><i class="fa fa-twitter social_icon_style"></i></a>
+	</div>
+	<div>
+		<img src="images/logo.gif" alt="logo" />
+	</div>
+	<div><p>©2015 Doctor's Associates Inc. SUBWAY®, SUBWAY EAT FRESH®, SUBWAY FOOTLONG® and SUBWAY SIX INCH® are registered trademarks of Doctor's Associates Inc.</p></div>
+	<div class="secondary_menu">
+		<ul>
+			<li><a href="#">Terms & Condition</a></li>
+			<li><a href="#">Privacy Statement</a></li>
+			<li><a href="#">Customer Comments</a></li>
+			<li><a href="#">Subway Partners<sup>TM</sup></a></li>
+			<li><a href="#">Subway.com</a></li>
+		</ul>
+	</div>
+</div>
+</footer>
+
+</body>
+</html>

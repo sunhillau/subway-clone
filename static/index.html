@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta name="description" content="" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Font-awesome CDN -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <!-- CSS with Compass normalised -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!--[if lt IE 8]>
+  <![endif]-->
+</head>
+<body>
+<header>
+<!--
+////////////////////////////////
+	Header Section
+////////////////////////////////
+-->
+<!-- Mobile Screen Header Max-width 699px -->
+<section class="head_mobile">
+<div class="cevc head_container_mobile">
+	
+<!-- LEFT side pop up menu -->
+	<div class="menu_left_mobile">
+		<i class="fa fa-navicon pointer"></i>
+		<div class="menu_left_container_mobile">
+			<div class="search_mobile">
+				<form>
+					<i class="fa fa-search"></i>
+					<input type="text" id="FindStore" placeholder="Search Store">
+				</form>
+			</div>
+
+			<div class="menu_left_pop">
+				<ul>
+					<li><a href="#">CURRENT OFFER</a></li>
+					<li><a href="#">OUR MENU</a></li>
+					<li><a href="#">STORE LOCATION</a></li>
+					<li><a href="#">CATERING</a></li>
+					<li><a href="#">ABOUT US</a></li>
+					<li><a href="#">CAREER</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- MIDDLE logo -->
+	<div class="cevc logo_mobile">
+		<img src="images/logo.gif" />
+	</div>
+<!-- RIGHT side pop up menu -->
+	<div class="menu_right_mobile">
+		<i class="fa fa-user pointer"></i>
+			<div class="menu_right_pop">
+				<form>
+					<div class="log_on_input">
+					<label for="user_log"></label><input type="text" id="user_log" placeholder="User Email" /><i class="fa fa-user"></i>
+					</div>
+					<div class="log_on_password">
+						<label for="user_password"></label><input type="password" id="user_password" placeholder="Password" /><i class="fa fa-lock"></i>
+						<button>Login</button>
+					</div>
+					<div class="cevc log_on_text">
+						<span><a href="#">Forget Password?</a></span>
+						<span><a href="#">Sign Up Now!</a></span>
+					</div>
+				</form>
+			</div>
+	</div>
+</div>
+</section>
+<div class="overlay"></div>
+<div class="clear_fix_nav_mobile"></div>
+<!-- / Mobile Screen Header Max-width 699px / -->
+
+<!-- Desktop Screen Header Min-width 700px -->
+<section class="head_desktop">
+	<div class="cevc headerToolbar">
+		<div class="cevc toolbar_home">
+			<span><a href="#"><i class="fa fa-home"></i></a></span>
+			<form>
+				<input type="text" id="FindStore" placeholder="Search Store"><i class="fa fa-search"></i>
+			</form>
+		</div>
+		<div class="toolbar_login">
+			<form class="cevc">
+					<div>
+					<label for="user_log"><i class="fa fa-user"></i></label><input type="text" id="user_log" placeholder="User Email" />
+					<label for="user_password"><i class="fa fa-lock"></i></label><input type="password" id="user_password" placeholder="Password" />
+					<button>Login</button>
+					</div>
+					<div>
+						<span><a href="#">Forget Password?</a></span>
+						<span><a href="#">Sign Up Now!</a></span>
+					</div>	
+			</form>
+		</div>
+	</div>
+	<div class="clear_fix_nav"></div>
+<!-- Navigation -->
+	<nav>
+		<div class="cevc nav_ul">
+			<img src="images/logo.gif" />
+			<ul>
+				<li><a href="#">CURRENT OFFER</a></li>
+				<li><a href="#">OUR MENU</a></li>
+				<li><a href="#">STORE LOCATION</a></li>
+				<li><a href="#">CATERING</a></li>
+				<li><a href="#">ABOUT US</a></li>
+				<li><a href="#">CAREER</a></li>
+			</ul>
+			<div class="header_social_icon social_icon">
+				<a href="#"><i class="fa fa-facebook social_icon_style"></i></a>
+				<a href="#"><i class="fa fa-youtube-play social_icon_style"></i></a>
+				<a href="#"><i class="fa fa-twitter social_icon_style"></i></a>
+		</div>
+		</div>
+
+	</nav>
+
+</section>
+<!-- / Desktop Screen Header Min-width 700px / -->
+<div class="clear_fix"></div>
+</header>
+
+<!--
+////////////////////////////////
+	Slider Carousel
+////////////////////////////////
+-->
+
+<section class="carousel_home">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="images/bannerGolder.jpg" alt="...">
+      <div class="carousel-caption">
+        slider 1
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/banner10lunch.jpg" alt="...">
+      <div class="carousel-caption">
+        slider 2
+      </div>
+    </div>
+		<div class="item">
+      <img src="images/bannerInsideOut.jpg" alt="...">
+      <div class="carousel-caption">
+        slider 3
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</section>
+
+<!--
+////////////////////////////////
+	Featured Image Post Section
+////////////////////////////////
+-->
+<secion class="container_feature_post">
+	<div class="post_item">
+		<h4 class="h4_mobile">Store Locator</h4>
+		<div class="text_img">
+			<a href="#"><img src="images/img_storelocator.jpg" alt="Store Location" /></a>
+			<h4 class="h4_desktop">Store Locator</h4>
+			<p><a href="#">Are you in the mood for your favourite Subway® Sub? Use our Store Locator to quickly find your nearest Subway® Restaurant!</a></p>
+		</div>
+		<a href="#"><p class="more_button">MORE <span>></span></p></a>
+	</div>
+	<div class="post_item">
+		<h4 class="h4_mobile">Subway® Eat Fresh Club</h4>
+		<div class="text_img">
+			<a href="#"><img src="images/img_home_swefc.gif" alt="Subway® Eat Fresh Club" /></a>
+			<h4 class="h4_desktop">Subway® Eat Fresh Club</h4>
+			<p><a href="#">Join the Subway Eat Fresh® Club today for exclusive offers. Plus get a free Subway 6-Inch® Sub & drink on your birthday!</a></p>
+		</div>
+		<a href="#"><p class="more_button">MORE <span>></span></p></a>
+	</div>
+	<div class="post_item">
+		<h4 class="h4_mobile">Subway Catering™</h4>
+		<div class="text_img">
+			<a href="#"><img src="images/img_home_catering.jpg" alt="Store Location" /></a>
+			<h4 class="h4_desktop">Subway Catering™</h4>
+			<p><a href="#">SUBWAY® Sandwich Platters are made on freshly baked breads with a selection of delicious ingredients. Order online today.</a></p>
+		</div>
+		<a href="#"><p class="more_button">MORE <span>></span></p></a>
+	</div>
+	<div class="post_item">
+		<h4 class="h4_mobile">Franchisee Information</h4>
+		<div class="text_img">
+			<a href="#"><img src="images/img_fran.jpg" alt="Subway® Eat Fresh Club" /></a>
+			<h4 class="h4_desktop">Franchisee Information</h4>
+			<p><a href="#">Are you interested in owning your own Subway® Franchise? If you have the passion to succeed we would love to hear from you!</a></p>
+		</div>
+		<a href="#"><p class="more_button">MORE <span>></span></p></a>
+	</div>
+
+</secion>
+
+<footer>
+<!--
+////////////////////////////////
+	Footer Section
+////////////////////////////////
+-->
+<div class="clear_fix"></div>
+<div class="footer_container">
+	<div class="social_icon social_icon_mobile">
+		<a href="#"><i class="fa fa-facebook social_icon_style"></i></a>
+		<a href="#"><i class="fa fa-youtube-play social_icon_style"></i></a>
+		<a href="#"><i class="fa fa-twitter social_icon_style"></i></a>
+	</div>
+	<div>
+		<img src="images/logo.gif" />
+	</div>
+	<div><p>©2015 Doctor's Associates Inc. SUBWAY®, SUBWAY EAT FRESH®, SUBWAY FOOTLONG® and SUBWAY SIX INCH® are registered trademarks of Doctor's Associates Inc.</p></div>
+	<div class="secondary_menu">
+		<ul>
+			<li><a href="#">Terms & Condition</a></li>
+			<li><a href="#">Privacy Statement</a></li>
+			<li><a href="#">Customer Comments</a></li>
+			<li><a href="#">Subway Partners<sup>TM</sup></a></li>
+			<li><a href="#">Subway.com</a></li>
+		</ul>
+	</div>
+</div>
+</footer>
+
+</body>
+</html>
