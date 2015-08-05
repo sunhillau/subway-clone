@@ -25,7 +25,7 @@
 		'addressID'                : 'bh-sl-address',
 		'regionID'                 : 'bh-sl-region',
 		'mapSettings'              : {
-			zoom     : 13,
+			zoom     : 15,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		},
 		'markerImg'                : null,
@@ -53,7 +53,7 @@
 		'defaultLoc'               : false,
 		'defaultLat'               : null,
 		'defaultLng'               : null,
-		'autoGeocode'              : false,
+		'autoGeocode'              : true,
 		'maxDistance'              : false,
 		'maxDistanceID'            : 'bh-sl-maxdistance',
 		'fullMapStart'             : true,
@@ -114,6 +114,7 @@
 		this._defaults = defaults;
 		this._name = pluginName;
 		this.init();
+		
 	}
 
 	// Avoid Plugin.prototype conflicts
@@ -1141,7 +1142,7 @@
 			var $addressInput = $('#' + this.settings.addressID);
 			var $searchInput = $('#' + this.settings.searchID);
 			var $distanceInput = $('#' + this.settings.maxDistanceID);
-
+			
 			// Stop the form submission
 			if(typeof e !== 'undefined' && e !== null) {
 				e.preventDefault();
@@ -1150,6 +1151,7 @@
 			// Query string parameters
 			if(this.settings.querystringParams === true) {
 			$('.bh-sl-loc-list').show();
+		
 				// Check for query string parameters
 				if(this.getQueryString(this.settings.addressID) || this.getQueryString(this.settings.searchID) || this.getQueryString(this.settings.maxDistanceID)){
 					addressInput = this.getQueryString(this.settings.addressID);
@@ -1989,7 +1991,13 @@
 					_this.createInfowindow(selectedMarker, listLoc, infowindow, storeStart, page);
 				}
 			});
-
+			
+			var isLocListVisible = $(".bh-sl-loc-list").is(":visible");
+			if (isLocListVisible){
+			
+			$('.bh-sl-loc-list li:first-child').trigger('click.storeLocator');
+			map.setZoom(15);
+			}
 			// Prevent bubbling from list content links
 			$(document).on('click.'+pluginName, '.' + _this.settings.locationList + ' li a', function (e) {
 				e.stopPropagation();
@@ -2072,6 +2080,5 @@
 			return returns !== undefined ? returns : this;
 		}
 	};
-
 
 })(jQuery, window, document);
